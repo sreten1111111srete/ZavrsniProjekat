@@ -48,4 +48,8 @@ public class InventoryPage extends BasePage{
     public String proveraKorpe() {
         return korpa.getText();
     }
+
+    public void klikniKorpu() {
+        korpa.click();
+    }
 }
