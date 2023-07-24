@@ -13,7 +13,7 @@ public class CartPage extends BasePage{
         PageFactory.initElements(driver, this);
     }
 
-    public void klikCheckout() {
+    public void klikniCheckout() {
         checkout.click();
     }
 }
