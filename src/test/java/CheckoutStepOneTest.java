@@ -18,6 +18,11 @@ public class CheckoutStepOneTest extends BaseTest {
         inventoryPage = new InventoryPage(driver);
         cartPage = new CartPage(driver);
         checkoutStepOnePage = new CheckoutStepOnePage(driver);
+    }
+
+    @Test
+    public void formular() {
+
         loginPage.ulogujSe("standard_user", "secret_sauce");
         inventoryPage.sortirajPoNajnizojCeni();
         inventoryPage.dodajArtikal1();
@@ -25,10 +30,6 @@ public class CheckoutStepOneTest extends BaseTest {
         inventoryPage.dodajArtikal3();
         inventoryPage.klikniKorpu();
         cartPage.klikniCheckout();
-    }
-
-    @Test
-    public void formular() {
         checkoutStepOnePage.popuniFormular("Sreten", "Stankov", "11070");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/checkout-step-two.html");
