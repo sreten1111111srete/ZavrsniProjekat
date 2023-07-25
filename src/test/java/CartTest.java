@@ -16,17 +16,17 @@ public class CartTest extends BaseTest {
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);
         cartPage = new CartPage(driver);
+    }
+
+    @Test
+    public void testCheckout() {
+
         loginPage.ulogujSe("standard_user", "secret_sauce");
         inventoryPage.sortirajPoNajnizojCeni();
         inventoryPage.dodajArtikal1();
         inventoryPage.dodajArtikal2();
         inventoryPage.dodajArtikal3();
         inventoryPage.klikniKorpu();
-    }
-
-    @Test
-    public void testCheckout() {
-
         cartPage.klikniCheckout();
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/checkout-step-one.html");

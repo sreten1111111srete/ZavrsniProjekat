@@ -20,6 +20,10 @@ public class CheckoutCompleteTest extends BaseTest {
         cartPage = new CartPage(driver);
         checkoutStepOnePage = new CheckoutStepOnePage(driver);
         checkoutCompletePage = new CheckoutCompletePage(driver);
+    }
+
+    @Test
+    public void krajKupovine() {
         loginPage.ulogujSe("standard_user", "secret_sauce");
         inventoryPage.sortirajPoNajnizojCeni();
         inventoryPage.dodajArtikal1();
@@ -28,10 +32,6 @@ public class CheckoutCompleteTest extends BaseTest {
         inventoryPage.klikniKorpu();
         cartPage.klikniCheckout();
         checkoutStepOnePage.popuniFormular("Sreten", "Stankov", "11070");
-    }
-
-    @Test
-    public void krajKupovine() {
         checkoutCompletePage.klikni();
 
         Assert.assertEquals(checkoutCompletePage.zavrsnaPoruka(), "Thank you for your order!");
